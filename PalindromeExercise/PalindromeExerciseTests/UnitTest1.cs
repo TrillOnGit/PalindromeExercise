@@ -7,14 +7,15 @@ namespace PalindromeExerciseTests
     public class UnitTest1
     {
         [Theory]
-        [InlineData("racecar", true)]
+        [InlineData("3racecar", false)]
         [InlineData("panama", false)]
-        [InlineData("A man, a plan, a canal - Panama!", true)]
+        [InlineData("A3 man, a plan, a canal - Panam3a!", true)]
         public void PalindromeTest(string word, bool expected)
         {
             //Arrange, Act, Assert
+            //Program prog = new Program();
 
-            bool actual = Program.IsPalindrome(word);
+            bool actual = WordSmith.IsPalindrome(word);
             
             Assert.Equal(actual, expected);
         }
